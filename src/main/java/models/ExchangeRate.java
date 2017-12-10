@@ -4,15 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 
-@Entity @IdClass(value=ConversionRateID.class)
-public class ConversionRate {
+@Entity @IdClass(value= ExchangeRateID.class)
+public class ExchangeRate {
     @Id public String fromCurrency;
     @Id public String toCurrency;
     public double rate;
 
-    protected ConversionRate() {}
+    protected ExchangeRate() {}
 
-    public ConversionRate(String fromCurrency, String toCurrency, double rate) {
+    public ExchangeRate(String fromCurrency, String toCurrency, double rate) {
         this.fromCurrency = fromCurrency;
         this.toCurrency = toCurrency;
         this.rate = rate;
@@ -45,7 +45,7 @@ public class ConversionRate {
     @Override
     public String toString() {
         return String.format(
-                "ConversionRate[fromCurrency=%s, toCurrency=%s, rate=%f]",
+                "ExchangeRate[fromCurrency=%s, toCurrency=%s, rate=%f]",
                 fromCurrency, toCurrency, rate
         );
     }
